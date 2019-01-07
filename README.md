@@ -18,9 +18,9 @@ See code examples in the project [wiki page](https://github.com/e-mzungu/rjc/wik
 Include maven dependency to you project
 
         <dependency>
-            <groupId>org.idevlab</groupId>
+            <groupId>com.github.akaskywolf</groupId>
             <artifactId>rjc</artifactId>
-            <version>0.7</version>
+            <version>0.7.1</version>
         </dependency>
 
 # Quick start
