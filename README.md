@@ -1,3 +1,6 @@
+# Fork purpose
+Note, I've just forked this repository to change the compatibility from Java 1.6 to Java 1.5 (which is what I needed). It's a pretty simple change overall and probably there won't be any further changes to the repository.
+
 # RJC
 RJC is a [Redis](http://redis.io/) Java Client.
 
