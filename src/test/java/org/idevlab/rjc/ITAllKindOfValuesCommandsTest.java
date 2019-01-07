@@ -128,13 +128,18 @@ public class ITAllKindOfValuesCommandsTest extends SingleNodeTestBase {
         assertEquals("bar", value);
     }
 
+    /*
+     *  akaSkyWolf's fork:
+     *  Changed the logic because renaming the key to the same name is now allowed
+     */
     @Test
     public void renameOldAndNewAreTheSame() {
         try {
             session.set("foo", "bar");
-            session.rename("foo", "foo");
-            fail("redisException expected");
+            String result = session.rename("foo", "foo");
+            assertEquals("OK", result);
         } catch (final RedisException e) {
+            fail("expected to be able to rename the key");
         }
     }
 
@@ -182,10 +187,14 @@ public class ITAllKindOfValuesCommandsTest extends SingleNodeTestBase {
         assertTrue(status);
     }
 
+    /*
+     *  akaSkyWolf's fork:
+     *  Changed the default TTL when a key does not exist to -2
+     */
     @Test
     public void ttl() {
         long ttl = session.ttl("foo");
-        assertEquals(-1, ttl);
+        assertEquals(-2, ttl);
 
         session.set("foo", "bar");
         ttl = session.ttl("foo");

@@ -88,6 +88,10 @@ public class RedisInputStream extends FilterInputStream {
             throw new RedisException(e);
         }
         String reply = sb.toString();
+        /*
+         *  akaSkyWolf's fork:
+         *  Removed the String.isEmpty() call because it was not supported in Java 1.5
+         */
         if (EMPTY_STRING.equals(reply)) {
             throw new RedisException(
                     "It seems like server has closed the connection.");
