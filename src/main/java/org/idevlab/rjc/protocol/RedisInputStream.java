@@ -24,6 +24,8 @@ import java.io.InputStream;
 
 public class RedisInputStream extends FilterInputStream {
 
+    private static final String EMPTY_STRING = "";
+
     protected final byte buf[];
 
     protected int count, limit;
@@ -86,7 +88,7 @@ public class RedisInputStream extends FilterInputStream {
             throw new RedisException(e);
         }
         String reply = sb.toString();
-        if (reply.isEmpty()) {
+        if (EMPTY_STRING.equals(reply)) {
             throw new RedisException(
                     "It seems like server has closed the connection.");
         }
