@@ -8,7 +8,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>bundle</packaging>
-    <groupId>com.github.akaSkyWolf</groupId>
+    <groupId>com.github.akaskywolf</groupId>
     <artifactId>rjc</artifactId>
     <version>0.7</version>
     <name>RJC</name>
@@ -57,14 +57,14 @@
 
         <!-- Bundle Properties -->
         <osgi.import>
-            !com.github.akaSkyWolf.rjc*;version=${project.version},
+            !com.github.akaskywolf.rjc*;version=${project.version},
             org.apache.commons.pool*;version="[1.4,1.5]",
             org.slf4j*;version="[1.4,1.6]",
             *
         </osgi.import>
         <osgi.dynamic.import>javax.*,org.w3c.*,org.xml.*</osgi.dynamic.import>
         <osgi.export>
-            com.github.akaSkyWolf.rjc*;version=${project.version}
+            com.github.akaskywolf.rjc*;version=${project.version}
         </osgi.export>
     </properties>
 
